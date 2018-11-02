@@ -15,6 +15,8 @@ Generating / copying 2FA codes<br>
 Switching between accounts<br>
 Viewing revocation code(s)<br>
 
+![Steam Guardian Screenshot](https://image.prntscr.com/image/UtzNGoHbRnyVU58KrsDLmQ.png)
+
 <b>To run you will need the following dependencies:</b>
 
 gevent<br>
