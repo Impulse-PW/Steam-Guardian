@@ -27,4 +27,4 @@ steam<br>
 steampy<br>
 ttk
 
-<b>setup.py</b> File and <b>binaries</b> coming later at project's conclusion.
+<b>setup.py</b>, <b>requirements.txt</b> and <b>binaries</b> coming later at project's conclusion.
