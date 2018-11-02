@@ -433,7 +433,7 @@ class mainWindow(Frame):
         if self.activeSecrets:
             return True
         else:
-            self.show_message(None, "error", "No active account to use! This is required to do this action.\nGo to'Guard -> New Account' to add one.")
+            self.show_message(None, "error", "No active account! This is required to do this action.\nGo to 'Guard -> New Steam Guard' to add one.")
     #Check for active api key
     def check_active_api(self):
         if self.check_active_secrets():
@@ -441,7 +441,7 @@ class mainWindow(Frame):
                 if self.apiController.check_api_key():
                     return True
                 else:
-                    self.show_message(None, "error", "API key is invalid. Taking you to the\nAPI window to update your key.")
+                    self.show_message(None, "error", "API key is invalid! Taking you to the\nAPI window to update your key.")
                     self.api_key_window()
             else:
                 self.show_message(None, "error", "No API key is set! This is required to do this action.\nTaking you to the API window to add a key.")
