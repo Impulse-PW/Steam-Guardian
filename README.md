@@ -7,7 +7,7 @@ When finished Steam Guardian will include functionality to encrypt your Steam Gu
 
 Item stealing protection is possible as well. If Steam Guard secrets are stolen and someone attempts to send your items elsewhere, Steam Guardian will see a gift being sent to another user in your confirmations. Since this action was not triggered by Steam Guardian, the software will cancel the trade and alert you of what happened. Automatic password reset might also be possible, I'm currently investigating an implementation.
 
-<b>Like Steam Guardian? Buy me a coffee!</b>
+<b>Like Steam Guardian?</b>
 
 <a href='https://ko-fi.com/M4M4LOV3' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi4.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
