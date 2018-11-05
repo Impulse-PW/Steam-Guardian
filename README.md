@@ -1,7 +1,7 @@
 # Steam-Guardian
 <h3><b>Steam Guard with trade and phishing protection. For Windows, Mac and Linux</b></h3>
 
-<b>Written for Python 3</b>
+<b>Written for Python 3 (Under Development)</b>
 
 When finished Steam Guardian will include functionality to encrypt your Steam Guard secrets with a password and cryptProtectData API, warn about trade offers from steamrep banned accounts, detect trade changes such as wear switching scams, show you the prices and totals of offers, and trading in general will prompt the user with tips and advice to avoid being scammed.
 
