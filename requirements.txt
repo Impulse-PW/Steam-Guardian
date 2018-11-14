@@ -1,0 +1,5 @@
+gevent
+pyperclip
+pillow
+steam
+steampy
