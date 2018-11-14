@@ -251,6 +251,160 @@ class clientSwitchWindow(Toplevel):
         self.destroy()
         self.rootClassRef.update_guard()
 
+#Confirmations window class
+class confirmationsWindow(Toplevel):
+    def __init__(self, parent, colorDic, rootClassRef):
+        #Class variables
+        self.colorDic = colorDic
+        self.parent = parent
+        self.rootClassRef = rootClassRef
+        #Initialize window's frame
+        Toplevel.__init__(self)
+        #Window title
+        self.windowTitle = Label(self, text="Your Trade With: Somebody_37")
+        self.windowTitle.configure(font=("Segoe UI", 12), bg=self.colorDic["windowTitleBackground"], fg=self.colorDic["windowTitleForeground"], pady=10)
+        self.windowTitle.pack(fill="x")
+
+        self.allInfo = Frame(self, bg=self.colorDic["appBackground"])
+        self.allInfo.pack(anchor="nw")
+
+        self.tradeInfo = Frame(self.allInfo, bg=self.colorDic["appBackground"])
+        self.tradeInfo.pack(padx=(20,0), pady=20, side="left")
+        self.tradeTotal = Label(self.tradeInfo, text="Your Total: $410.73")
+        self.tradeTotal.configure(font=("Segoe UI", 14), bg=self.colorDic["appBackground"], fg=self.colorDic["infoLabelForeground"], pady=10)
+        self.tradeTotal.pack()
+        self.tradeBox = Frame(self.tradeInfo, bg=self.colorDic["tradeFrameBackground"], highlightbackground=self.colorDic["tradeFrameHighlight"], highlightthickness=1)
+        self.tradeBox.pack()
+        self.trade = [["knife.png", "#8650ac", "$166.77"], ["ak47.png", "#d2d2d2", "$28.22"], ["fiveseven.png", "#d2d2d2", "$0.49"], ["p250.png", "#cf6a32", "$6.16"], ["famas.png", "#d2d2d2", "$0.05"], ["knife2.png", "#8650ac", "$208.95"], ["czauto.png", "#d2d2d2", "$0.09"], ["knife.png", "#8650ac", "$166.77"], ["ak47.png", "#d2d2d2", "$28.22"], ["fiveseven.png", "#d2d2d2", "$0.49"], ["p250.png", "#cf6a32", "$6.16"], ["famas.png", "#d2d2d2", "$0.05"], ["knife2.png", "#8650ac", "$208.95"], ["czauto.png", "#d2d2d2", "$0.09"]]
+        self.pages = [self.trade[i:i+12] for i in range(0, len(self.trade), 12)]
+        self.page_Counter = 1
+        self.items = self.load_inventory(self.tradeBox, self.pages[0])
+
+        self.backwardFrame = Frame(self.tradeInfo,  bg=self.colorDic["appBackground"])
+        self.backwardFrame.pack(side="left", pady=10, padx=10)
+        self.backwardimg = ImageTk.PhotoImage(file="images/gui/backward.png")
+        self.backward = Label(self.backwardFrame, bg=self.colorDic["appBackground"], image=self.backwardimg, cursor="hand2")
+        self.backward.pack()
+        self.backward.bind("<Button-1>", lambda event: self.load_own_page(event, "backward"))
+        self.pageFrame = Frame(self.tradeInfo, bg=self.colorDic["appBackground"])
+        self.pageFrame.pack_propagate(0)
+        self.pageFrame.pack(side="left", pady=10, fill="both", expand=1)
+        self.pageCounter = Label(self.pageFrame, text="Page 1 of 1", font=("Segoe UI", 11), bg=self.colorDic["appBackground"], fg=self.colorDic["infoLabelForeground"])
+        self.pageCounter.pack()
+        self.forwardFrame = Frame(self.tradeInfo,  bg=self.colorDic["appBackground"])
+        self.forwardFrame.pack(side="right", padx=10)
+        self.forwardimg = ImageTk.PhotoImage(file="images/gui/forward.png")
+        self.forward = Label(self.forwardFrame, bg=self.colorDic["appBackground"], image=self.forwardimg, cursor="hand2")
+        self.forward.pack()
+        self.forward.bind("<Button-1>", lambda event: self.load_own_page(event, "forward"))
+
+        self.tradeInfo1 = Frame(self.allInfo, bg=self.colorDic["appBackground"])
+        self.tradeInfo1.pack(padx=(20,0), pady=20, side="left")
+        self.tradeTotal1 = Label(self.tradeInfo1, text="Their Total: $392.76")
+        self.tradeTotal1.configure(font=("Segoe UI", 14), bg=self.colorDic["appBackground"], fg=self.colorDic["infoLabelForeground"], pady=10)
+        self.tradeTotal1.pack()
+        self.tradeBox1 = Frame(self.tradeInfo1, bg=self.colorDic["tradeFrameBackground"], highlightbackground=self.colorDic["tradeFrameHighlight"], highlightthickness=1)
+        self.tradeBox1.pack()
+        self.trade1 = [["knife3.png", "#8650ac", "$392.76"]]
+        self.pages1 = [self.trade1[i:i+12] for i in range(0, len(self.trade1), 12)]
+        self.page_Counter1 = 1
+        self.items1 = self.load_inventory(self.tradeBox1, self.pages1[0])
+
+        self.backwardFrame1 = Frame(self.tradeInfo1,  bg=self.colorDic["appBackground"])
+        self.backwardFrame1.pack(side="left", pady=10, padx=10)
+        self.backwardimg1 = ImageTk.PhotoImage(file="images/gui/backward.png")
+        self.backward1 = Label(self.backwardFrame1, bg=self.colorDic["appBackground"], image=self.backwardimg1, cursor="hand2")
+        self.backward1.pack()
+        self.pageFrame1 = Frame(self.tradeInfo1, bg=self.colorDic["appBackground"])
+        self.pageFrame1.pack_propagate(0)
+        self.pageFrame1.pack(side="left", pady=10, fill="both", expand=1)
+        self.pageCounter1 = Label(self.pageFrame1, text="Page 1 of 1", font=("Segoe UI", 11), bg=self.colorDic["appBackground"], fg=self.colorDic["infoLabelForeground"])
+        self.pageCounter1.pack()
+        self.forwardFrame1 = Frame(self.tradeInfo1,  bg=self.colorDic["appBackground"])
+        self.forwardFrame1.pack(side="right", padx=10)
+        self.forwardimg1 = ImageTk.PhotoImage(file="images/gui/forward.png")
+        self.forward1 = Label(self.forwardFrame1, bg=self.colorDic["appBackground"], image=self.forwardimg1, cursor="hand2")
+        self.forward1.pack()
+
+        self.buttonHolder = Frame(self, bg=self.colorDic["appBackground"])
+        self.buttonHolder.pack()
+        self.submitButton = Button(self.buttonHolder, text="Confirm Trade", font=("Segoe UI", 12), relief="flat", cursor="hand2", width=15)
+        self.submitButton.configure(fg=self.colorDic["actionButtonForeground"], bg=self.colorDic["actionButtonBackground"])
+        self.submitButton.pack(ipady=10, ipadx=10, side="left")
+        self.cancelButton = Button(self.buttonHolder, text="Cancel Trade", font=("Segoe UI", 12), relief="flat", cursor="hand2", width=15)
+        self.cancelButton.configure(fg=self.colorDic["cancelButtonForeground"], bg=self.colorDic["cancelButtonBackground"])
+        self.cancelButton.pack(padx=(20,0), ipady=10, ipadx=10, side="left")
+
+    def load_own_page(self, event, direction):
+        if direction == "forward":
+            if self.page_Counter < len(self.pages):
+                self.forget_own_widgets()
+                self.page_Counter+=1
+                self.items = self.load_inventory(self.tradeBox, self.pages[self.page_Counter-1])
+        elif direction == "backward":
+            if self.page_Counter > 1:
+                self.forget_own_widgets()
+                self.page_Counter-=1
+                self.items = self.load_inventory(self.tradeBox, self.pages[self.page_Counter-1])
+
+    def load_inventory(self, frame, inventory):
+        items = {"framelines": [], "frames": [], "images": [], "labels": []}
+        total = len(inventory)
+        inventory = [inventory[i:i+4] for i in range(0, len(inventory), 4)]
+
+        for invList in inventory:
+            items["framelines"].append(Frame(frame, bg=self.colorDic["tradeFrameBackground"]))
+            items["framelines"][-1].pack(anchor="w")
+            for counter, item in enumerate(invList, start=1):
+                items["frames"].append(Frame(items["framelines"][-1], bg=self.colorDic["tradeItemBackground"], highlightbackground=item[1], highlightthickness=1))
+                if counter % 4 == 0:
+                    items["frames"][-1].pack(padx=(10,10), pady=(10,0), side="left")
+                else:
+                    items["frames"][-1].pack(padx=(10,0), pady=(10,0), side="left")
+                items["images"].append(ImageTk.PhotoImage(file="images/cache/" + item[0]))
+                items["labels"].append(Label(items["frames"][-1], bg=self.colorDic["tradeItemBackground"], image=items["images"][-1]))
+                items["labels"][-1].grid(row=0, column=0)
+                items["labels"].append(Label(items["frames"][-1], bg=self.colorDic["tradeItemPriceBackground"], fg=self.colorDic["tradeItemPriceForeground"], text=item[2]))
+                items["labels"][-1].grid(row=0, column=0, sticky="sew")
+
+        if total < 12:
+            rangeList = list(range(total+1, 13))
+            newList = []
+            tempList = []
+            for i in rangeList:
+                if i % 4 == 0:
+                    tempList.append(i)
+                    newList.append(tempList)
+                    tempList = []
+                else:
+                    tempList.append(i)
+            for item in newList:
+                for i in item:
+                    items["frames"].append(Frame(items["framelines"][-1], bg=self.colorDic["tradeItemBackground"], width=102, height=102))
+                    if i % 4 == 0:
+                        items["frames"][-1].pack(padx=(10,10), pady=(10,0), side="left")
+                    else:
+                        items["frames"][-1].pack(padx=(10,0), pady=(10,0), side="left")
+                    items["frames"][-1].pack_propagate(0)
+                items["framelines"].append(Frame(frame, bg=self.colorDic["tradeFrameBackground"]))
+                items["framelines"][-1].pack(anchor="w")
+        items["framelines"].append(Frame(frame, bg=self.colorDic["tradeFrameBackground"]))
+        items["framelines"][-1].pack(pady=(0,10), anchor="e")
+
+        return items
+
+    def forget_own_widgets(self):
+        for label in self.items["framelines"]:
+            label.pack_forget()
+
+        self.items = None
+
+    def forget_partner_widgets(self):
+        for label in self.items1["framelines"]:
+            label.pack_forget()
+
+        self.items1 = None
+
 #2FA prompt window class
 class promptFor2FA(Toplevel):
     #Initialize
@@ -450,7 +604,12 @@ class mainWindow(Frame):
     def confirmations_window(self, event):
         if self.check_active_api():
             #Everything's good, get our confirmations
-            print("Valid key found. Confirmations not yet implimented.")
+            self.confirmationWindow = confirmationsWindow(self.parent, self.colorDic, self)
+            self.confirmationWindow.geometry("980x611")
+            self.confirmationWindow.resizable(0,0)
+            self.confirmationWindow.configure(bg=self.colorDic["appBackground"])
+            self.confirmationWindow.title("Steam Guardian - Confirmations")
+            guiController(self.confirmationWindow).center()
     #Delete Steam Guard method
     def delete_steam_guard(self):
         #If active secrets set
