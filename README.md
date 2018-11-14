@@ -7,12 +7,8 @@ When finished Steam Guardian will include functionality to encrypt your Steam Gu
 
 Item stealing protection is possible as well. If Steam Guard secrets are stolen and someone attempts to send your items elsewhere, Steam Guardian will see a gift being sent to another user in your confirmations. Since this action was not triggered by Steam Guardian, the software will cancel the trade and alert you of what happened. Automatic password reset might also be possible, I'm currently investigating an implementation.
 
-<b>Like Steam Guardian?</b>
-======================
-
-<a href='https://ko-fi.com/M4M4LOV3' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi4.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
-
 <b>Current features:</b>
+===================
 
 Adding Steam Guard<br>
 Removing Steam Guard<br>
@@ -26,7 +22,16 @@ Viewing revocation code(s)<br>
 ===============================================
 
 ```
+git clone https://github.com/Impulse-PW/Steam-Guardian && cd Steam-Guardian
+sudo apt-get install python3-tk
 pip3 install -r requirements.txt
+cd project
+python3 __main__.py
 ```
 
 <b>setup.py</b> and <b>binaries</b> coming later at project's conclusion.
+
+<b>Like Steam Guardian?</b>
+======================
+
+<a href='https://ko-fi.com/M4M4LOV3' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi4.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
