@@ -11,7 +11,7 @@ Generating / copying 2FA codes<br>
 Switching between accounts<br>
 Viewing revocation code(s)<br>
 
-![Steam Guardian Screenshot](https://image.prntscr.com/image/UtzNGoHbRnyVU58KrsDLmQ.png)
+![Steam Guardian Screenshot](https://image.ibb.co/bC8kfL/Selection-001.png)
 
 <b>To run Steam Guardian from source code (Linux):</b>
 ===============================================
