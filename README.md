@@ -21,10 +21,17 @@ Viewing revocation code(s)<br>
 <b>To run Steam Guardian from source code (Linux):</b>
 ===============================================
 
+Download Source and cd into Steam-Guardian
 ```
 git clone https://github.com/Impulse-PW/Steam-Guardian && cd Steam-Guardian
-sudo apt-get install python3-tk
+```
+Install requirements
+```
+sudo apt-get install python3-tk xclip
 pip3 install -r requirements.txt
+```
+Start Steam-Guardian
+```
 cd project
 python3 __main__.py
 ```
