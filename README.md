@@ -1,8 +1,4 @@
-# Steam-Guardian
-<h3><b>Steam Guard with trade and phishing protection. For Windows, Mac and Linux</b></h3>
-
-Under Development
-=================
+# Steam-Guardian (Under Development)
 
 Steam Guardian is a multi-platform Steam Guard implementation for computers that aims to prevent and inform users of scams and other threats. Designed to operate simply so transition from mobile is easy. Convenience, safety and ease of use is the goal of this project.
 
