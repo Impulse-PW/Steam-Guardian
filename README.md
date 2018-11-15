@@ -13,7 +13,7 @@ Viewing revocation code(s)<br>
 
 ![Steam Guardian Screenshot](https://image.ibb.co/bC8kfL/Selection-001.png)
 
-<b>To run Steam Guardian from source code (Linux):</b>
+<b>Run from source code (Linux):</b>
 ===============================================
 
 Download Source and cd into Steam-Guardian
